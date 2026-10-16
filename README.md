@@ -1,5 +1,5 @@
 # Operating-Systems-Three-Easy-Pieces
-Short summaries of the book "Operating Systems: Three Easy Pieces"
+Short summaries of the book "Operating Systems: Three Easy Pieces". This is just for personal use. Writing & summarizing helps to memorize what I read and also I can come back in the future and read my summary.
 
 ## Introduction
 
