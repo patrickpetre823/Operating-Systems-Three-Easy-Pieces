@@ -15,10 +15,10 @@ This chapter gives a brief overview of the topics covered in this book. There ar
    Key takeaway: An operating system manages CPU time, RAM, and storage, provides simple interfaces, and ensures that multiple programs can work together efficiently and securely.
 
 
-   ## Virtualization
+## Virtualization
 
-   ### Process
+### Process
 
-   ### Process API
+### Process API
 
    
