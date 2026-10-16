@@ -18,6 +18,13 @@ This chapter gives a brief overview of the topics covered in this book. There ar
 ## Virtualization
 
 ### Process
+The first question is: What is a process? A process is simply a running program. 
+The second question is: How can the OS give the illusion of many CPUs when only a few exist? The answer is time sharing. Run one process, stop it, run another, and so on. This costs a bit of performance. The counter part is space sharing. This divides a resource partially, for example storage. 
+
+How does this work?
+
+Mechanisms & policies
+
 
 ### Process API
 
