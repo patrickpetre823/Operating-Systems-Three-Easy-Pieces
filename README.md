@@ -63,4 +63,10 @@ This is important. If the OS chooses to pause a process and resume it afterwards
 
 ### Direct Execution
 The main question is: How does the OS achieve virtualization and keep performance without loosing control. 
-The basic technique is called **`limited direct execution`**.
+The basic technique is called **`limited direct execution`**. This basically just means "run the program directly on the CPU". This intruduces some problems tha we need to solve.
+
+Problem 1: Restricted Operations
+Direct execution has the benefit of performance but raises the problem of restricted operation. For example a process may want to perform some kind of I/O request to a disk. 
+To manage this, we introduce a new processor mode, called **`user mode`**. Code that runs in this mode is restricted to what it can do. In contrast to user mode is **`kernel mode`**, where code 
+has privileged access to hardware and system ressources.
+If an application want to access privileged services while running in user mode, it makes a **`system call`**. This will hand the OS control of this specific service request. For this use case, the OS keeps a list of addresses, called the  **`Trap table`**. The addresses point to kernel functions, for example "&keyboard_handler". After it is completed, the OS calls a **`return-from-trap`**.
