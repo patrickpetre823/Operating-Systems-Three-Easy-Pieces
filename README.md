@@ -68,5 +68,9 @@ The basic technique is called **`limited direct execution`**. This basically jus
 Problem 1: Restricted Operations
 Direct execution has the benefit of performance but raises the problem of restricted operation. For example a process may want to perform some kind of I/O request to a disk. 
 To manage this, we introduce a new processor mode, called **`user mode`**. Code that runs in this mode is restricted to what it can do. In contrast to user mode is **`kernel mode`**, where code 
-has privileged access to hardware and system ressources.
+has privileged access to hardware and system resources.
 If an application want to access privileged services while running in user mode, it makes a **`system call`**. This will hand the OS control of this specific service request. For this use case, the OS keeps a list of addresses, called the  **`Trap table`**. The addresses point to kernel functions, for example "&keyboard_handler". After it is completed, the OS calls a **`return-from-trap`**.
+
+Problem 2: Switching between Processes
+TO switch between processes the OS needs to take back control from the CPU. In a "Non-Cooperative approach" this is handled by a **`timer interrupt`**. When a timer halts a process, the OS regains control and a **`interrupt handler`** runs. This timer is set up while booting and is of course a privileged operation. Of course, when a process is interrupted, the hardware needs to safe information about the state of the process to make sure it can resume after a "return-from-trap" instruction. This is similar to the behavior after a system call.
+
