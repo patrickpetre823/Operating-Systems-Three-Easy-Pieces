@@ -7,11 +7,11 @@ The book and additional information can be found here: https://pages.cs.wisc.edu
 
 This chapter gives a brief overview of the topics covered in this book. There are 3 main objectives of an OS and these are the main topics covered in different chapters.
 
-1. Virtualization
+1. **`Virtualization`**
    The OS is responsible of virtualization of the CPU and RAM for programs. Thus programs can run simultaneously and 
-2. Concurrency
+2. **`Concurrency`**
    Multiple threads can execute concurrently.
-3. Persistence
+3. **`Persistence`**
    File systems store data permanently on SSDs or hard drives
 
    Key takeaway: An operating system manages CPU time, RAM, and storage, provides simple interfaces, and ensures that multiple programs can work together efficiently and securely.
@@ -22,7 +22,7 @@ This chapter gives a brief overview of the topics covered in this book. There ar
 ### Process
 The first question is: What is a process? A process is simply a running program.
 
-The second question is: How can the OS give the illusion of many CPUs when only a few exist? The answer is time sharing. Run one process, stop it, run another, and so on. This costs a bit of performance. The counter part is space sharing. This divides a resource partially, for example storage. 
+The second question is: How can the OS give the illusion of many CPUs when only a few exist? The answer is **`time sharing`**. Run one process, stop it, run another, and so on. This costs a bit of performance. The counter part is space sharing. This divides a resource partially, for example storage. 
 
 How does this work?
 ->Mechanisms & policies
@@ -42,10 +42,11 @@ This usually consists of:
 - Wait
 - Miscellaneous Control (for example stopping a process and resume it after a while)
 - Status
+- more
 
 ### Process creation
 To start a process the OS needs to load programs code and static data into memory, that is the address space (Nowadays performed lazily, not everything at once)
-Some of the address space must be allocated to the programs run-time stack (local variables, functions etc.) and heap (dynamic reserved memory).
+Some of the address space must be allocated to the programs **`run-time stack`** (local variables, functions etc.) and **`heap`** (dynamic reserved memory).
 Then the OS usually does some initialization related to I/O, for example on UNIX, every process gets 3 file descriptors.
 Finally the OS starts the program, typically by jumping to main(). Thus transferring control to the CPU.
 
